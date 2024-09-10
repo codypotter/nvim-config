@@ -45,4 +45,12 @@ return require('packer').startup(function(use)
     end
   }
   use { 'saadparwaiz1/cmp_luasnip' }
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  }
+  use('github/copilot.vim')
+  use('tpope/vim-commentary')
 end)
